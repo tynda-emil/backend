@@ -1,0 +1,212 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    height: 100vh;
+}
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: black;
+	height: 90px;
+    color: white;
+    text-align: center;
+    padding: 10px 10px;
+    z-index: 1000;
+    display: flex; /* Используем flexbox для выравнивания элементов */
+    align-items: center; /* Центрируем по вертикали */
+    
+}
+.header-logo {
+    width: 55px; /* Ширина изображения */
+    height: 70px; /* Высота изображения */
+    vertical-align: middle; /* Выравнивание по центру */
+    margin-right: 15px; /* Отступ между изображением и текстом */
+}
+.player-container {
+    display: flex;
+    align-items: center;
+    margin-left: auto; /* Чтобы контейнер смещался вправо */
+    margin-right: 20px;
+	width:420px;
+}
+.album-cover {
+    width: 70px;
+    height: 70px;
+    background-color: gray; 
+    margin-right: 15px;
+}
+
+.track-info {
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+	width:150px;
+}
+
+.track-info h3 {
+    margin: 0;
+    font-family: "Red Hat Text", sans-serif;
+    color: white;
+     white-space: nowrap; /* Не переносим текст на новую строку */
+    overflow: hidden; /* Скрываем текст, который не помещается */
+    text-overflow: ellipsis; /* Показываем троеточие, если текст длинный */
+}
+
+.track-info p {
+    margin: 0;
+    font-family: "Red Hat Text", sans-serif;
+    color: white;
+    white-space: nowrap; /* Не переносим текст на новую строку */
+    overflow: hidden; /* Скрываем текст, который не помещается */
+    text-overflow: ellipsis; /* Показываем троеточие, если текст длинный */
+}
+
+.player-right{
+	width:150px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 5px;
+    background-color: #444;
+    margin-top: 10px;
+    margin-bottom: 5px; /* Отступ между прогресс-баром и контролами */
+}
+
+.progress {
+    width: 30%; /* Для демонстрации прогресса, можно менять динамически */
+    height: 100%;
+    background-color: #cb6ce6;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    width: 100%; /* Размер контейнера для кнопок управления */
+    margin-top: 10px; /* Добавить отступ сверху для отрыва от прогресс-бара */
+	align-self:center;
+}
+
+.controls button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+}
+.controls button:hover {
+            transform: scale(1.2);
+}
+
+.button-container {
+    margin-left: auto; /* Отодвигает контейнер к правому краю */
+    display: flex; /* Используем flexbox для выравнивания кнопок */
+    gap: 10px; /* Отступ между кнопками */
+	margin-right: 20px;
+}
+
+.signup-button {
+    background-color: black; /* Цвет фона кнопки */
+    color: white; /* Цвет текста кнопки */
+    border: none; /* Убираем рамку */
+    padding: 5px 10px; /* Внутренние отступы */
+    cursor: pointer; /* Курсор при наведении */
+    border-radius: 3px; /* Скругленные углы */
+    font-family: "Red Hat Text", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+	font-size:16px;
+    height: 45px; /* Фиксированная высота для согласованности */
+}
+
+.signup-button:hover {
+    background-color: #080808; /* Цвет фона кнопки при наведении */
+}
+/* Основной контейнер */
+.container {
+    display: flex;
+    width: 100%;
+    margin-top: 70px; /* Отступ для шапки */
+}
+
+/* Боковое меню */
+aside {
+    position: fixed;
+    top: 90px;
+    left: 0;
+    width: 70px; /* Начальная ширина для иконок */
+    background-color: black;
+    height: calc(100vh - 60px);
+    padding: 10px;
+    overflow-y: auto;
+    transition: width 0.3s; /* Плавное изменение ширины */
+	align-items: center;
+}
+
+aside:hover {
+    width: 200px; /* Ширина при наведении */
+}
+
+aside ul {
+    list-style: none;
+	padding: 0;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.icon {
+    font-size: 24px; /* Размер иконки */
+    transition: margin-right 0.3s; /* Плавное изменение отступа */
+	color: #cb6ce6;
+	width: 20px;
+}
+
+.label {
+    display: none; /* Скрываем название по умолчанию */
+    margin-left: 10px; /* Отступ между иконкой и названием */
+    font-size: 16px;
+}
+
+/* Показываем название при наведении на меню */
+aside:hover .label {
+    display: inline; /* Показываем название при наведении */
+}
+
+aside:hover .icon {
+    margin-right: 10px; /* Увеличиваем отступ между иконкой и названием */
+}
+
+/* Основной контент */
+main {
+    margin-left: 70px; /* Отступ для основного контента */
+	margin-top: 20px;
+    padding: 20px;
+    width: calc(100% - 60px);
+    height: calc(100vh - 60px);
+    background-color: #080808;
+}
+
+h1 {
+    font-family: "Lexend", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-weight: 300;
+}
+
+.label{
+	font-family: "Red Hat Text", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
